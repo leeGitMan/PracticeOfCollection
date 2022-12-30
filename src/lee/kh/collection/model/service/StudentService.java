@@ -52,7 +52,7 @@ public class StudentService {
 				case 3: System.out.println( update()); break;
 				case 4: System.out.println(remomomoveve()); break;
 				case 5: searchName(); break;
-				case 6: break;
+				case 6: searchName1(); break;
 				case 0: System.out.println("끄으으읏."); break;
 				
 				}
@@ -284,6 +284,60 @@ public class StudentService {
 				}
 			}
 		}
+	}
+	
+	
+	public void searchName1() {
+		
+		System.out.println(" === 학생 이름 검색(부분 일치) === ");
+		
+		// 학생 이름 검색하기
+		// 부분 검색
+		// contains 쓰기
+		
+		boolean flag = true;
+		
+		
+		
+		
+		
+		if(listOfStudent.isEmpty()) {
+			System.out.println("비었네용");
+		}
+		else {
+			System.out.print("검색할 사람의 이름 혹은 부분 이름 입력");
+			String input = sc.next();
+			
+			for(Student std : listOfStudent) {
+				if(std.getName().contains(input)) {
+					System.out.println(std.getName());
+					flag =false;
+				}
+			}
+			if(flag) {
+				System.out.println("없네용");
+				
+			}
+		}
+		
+		
+		
+		
+//		System.out.print("검색할 이름 혹은 부분적인 거 입력 ");
+//		String input = sc.next();
+//		
+//		if(listOfStudent.isEmpty()) {
+//			System.out.println("비었네용");
+//			System.out.println();
+//		}
+//		else {
+//			for(Student std : listOfStudent) {
+//				if(std.getName().contains(input)) {
+//					System.out.println(std.getName());
+//				
+//				}
+//			}
+//		}	
 	}
 }
 
